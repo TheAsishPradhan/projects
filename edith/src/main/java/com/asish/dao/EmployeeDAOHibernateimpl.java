@@ -21,7 +21,6 @@ public class EmployeeDAOHibernateimpl implements EmployeeDAO {
 	}
 
 	@Override
-	@Transactional
 	public List<Employee> findAll() {
 		// get the current hibernate session
 		Session currentSession = entityManager.unwrap(Session.class);
