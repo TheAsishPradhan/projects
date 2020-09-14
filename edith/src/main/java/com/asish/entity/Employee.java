@@ -13,13 +13,9 @@ import javax.persistence.Transient;
 public class Employee {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
 	private int id;
 	private String firstname;
 	private String lastname;
-	@Transient
-	private String email;
 
 	public Employee() {
 
@@ -28,7 +24,6 @@ public class Employee {
 	public Employee(int id, String firstname, String lastname, String email) {
 		this.firstname = firstname;
 		this.lastname = lastname;
-		this.email = email;
 	}
 
 	public int getId() {
@@ -55,16 +50,4 @@ public class Employee {
 		this.lastname = lastname;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email + "]";
-	}
 }
